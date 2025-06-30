@@ -1,4 +1,11 @@
-﻿altair==5.5.0
+# Fix SQLite version issue for ChromaDB on Streamlit Cloud
+try:
+    __import__('pysqlite3')
+    import sys
+    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+except ImportError:
+    pass
+altair==5.5.0
 annotated-types==0.7.0
 anyio==4.9.0
 attrs==25.3.0
@@ -108,5 +115,8 @@ websocket-client==1.8.0
 websockets==15.0.1
 wheel==0.45.1
 zipp==3.23
+langchain
+spacy
+pandas
 protobuf==3.20.3
-pysqlite3-binary
+psyqlite3.binary
