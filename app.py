@@ -1,10 +1,10 @@
 # Fix SQLite version issue for ChromaDB on Streamlit Cloud
-try:
-    # _import_('pysqlite3')
-    import sys
-    sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
-except ImportError:
-    pass
+# try:
+#     # _import_('pysqlite3')
+#     import sys
+#     sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+# except ImportError:
+#     pass
 
 import streamlit as st
 from typing import List, Dict, Optional
